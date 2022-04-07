@@ -1,6 +1,5 @@
 package com.example.demo.entidades;
 
-import java.io.File;
 
 public class Tutor extends Persona{
 

@@ -1,16 +1,41 @@
 package com.example.demo.entidades;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "habitantes")
 public class Habitante extends Persona {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private int idhabitante;
+
+    @Column(nullable = false)
     private Tutor tutor;
+
+    @Column(nullable = false)
     private Expediente expediente;
 
     public Habitante() {
     }
 
-    public Habitante(Tutor tutor, Expediente expediente) {
+    public Habitante(int idhabitante, Tutor tutor, Expediente expediente) {
         this.tutor = tutor;
         this.expediente = expediente;
+        this.idhabitante = idhabitante;
+    }
+
+    public int getId(){
+        return idhabitante;
+    }
+
+    public void setId(int idhabitante){
+        this.idhabitante = idhabitante;
     }
 
     public Tutor getTutor() {

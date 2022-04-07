@@ -3,7 +3,6 @@ package com.example.demo.servlets;
 import com.example.demo.entidades.Usuario;
 import com.example.demo.serviciosRest.UsuarioServicio;
 import java.io.IOException;
-import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
