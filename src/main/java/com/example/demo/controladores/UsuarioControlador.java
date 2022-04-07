@@ -56,7 +56,6 @@ public class UsuarioControlador {
     }
 
     // Consultar por un parámetro en especifico un usuario (por su nombre)
-    // query?nombre=Jaime, por ejemplo
     @GetMapping("/query")
     public ResponseEntity<ArrayList<Usuario>> consultarPorNombreUsuario(@RequestParam("nombre") String nombre) {
         ArrayList<Usuario> usuarios = this.usuarioServicio.consultarPorNombre(nombre);
