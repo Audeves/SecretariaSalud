@@ -1,5 +1,7 @@
 package com.example.demo.servlets;
+import com.example.demo.entidades.Expediente;
 import com.example.demo.entidades.Habitante;
+import com.example.demo.entidades.Tutor;
 import com.example.demo.serviciosRest.HabitanteServicioRest;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -17,11 +19,15 @@ public class consultaHabitante extends HttpServlet{
         HttpSession session = request.getSession();
         this.habitante = new HabitanteServicioRest();   
         Habitante hb = new Habitante();
-        hb.setNombre("Bryan");
-        hb.set("sonora");
+        hb.setNombre("Bryan Angulo");
+        hb.setDireccion("Magdalena #2352");
+        hb.setEdad(22);
+
+        //hb.setExpediente(new Expediente());
+        //hb.setTutor(new Tutor());
         System.out.println(hb);
         session.setAttribute("habitante", hb);
-        response.sendRedirect("consultaExpediente.jsp");
+        response.sendRedirect("consultaHabitante.jsp");
     }
 
     
