@@ -1,4 +1,5 @@
 package com.example.demo.entidades;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,42 +17,48 @@ public class Habitante extends Persona {
     private int idhabitante;
 
     @Column(nullable = false)
-    private Tutor tutor;
+    private String nombre;
 
     @Column(nullable = false)
-    private Expediente expediente;
+    private String direccion;
+
+    @Column(nullable = false)
+    private int edad;
+
+    @Column(nullable = true)
+    private byte[] datoBiometrico;
+
+    @Column(nullable = true)
+    private int idTutor;
+
+    @Column(nullable = false)
+    private int idExpediente;
 
     public Habitante() {
     }
 
-    public Habitante(int idhabitante, Tutor tutor, Expediente expediente) {
-        this.tutor = tutor;
-        this.expediente = expediente;
-        this.idhabitante = idhabitante;
-    }
-
-    public int getId(){
+    public int getIdhabitante() {
         return idhabitante;
     }
 
-    public void setId(int idhabitante){
+    public void setIdhabitante(int idhabitante) {
         this.idhabitante = idhabitante;
     }
 
-    public Tutor getTutor() {
-        return tutor;
+    public Integer getIdTutor() {
+        return idTutor;
     }
 
-    public void setTutor(Tutor tutor) {
-        this.tutor = tutor;
+    public void setIdTutor(Integer idTutor) {
+        this.idTutor = idTutor;
     }
 
-    public Expediente getExpediente() {
-        return expediente;
+    public Integer getIdExpediente() {
+        return idExpediente;
     }
 
-    public void setExpediente(Expediente expediente) {
-        this.expediente = expediente;
+    public void setIdExpediente(Integer idExpediente) {
+        this.idExpediente = idExpediente;
     }
 
     public String getNombre() {
@@ -86,7 +93,4 @@ public class Habitante extends Persona {
         this.datoBiometrico = datoBiometrico;
     }
 
-
-
-    
 }

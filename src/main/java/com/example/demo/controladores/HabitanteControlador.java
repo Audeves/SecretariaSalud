@@ -56,12 +56,12 @@ public class HabitanteControlador {
     }
 
     // Consultar por un parámetro en especifico un habitante (por su nombre)
-    @GetMapping("/query")
-    public ResponseEntity<ArrayList<Habitante>> consultarPorNombreHabitante(@RequestParam("nombre") String nombre) {
-        ArrayList<Habitante> habitantes = this.habitanteServicio.consultarPorNombre(nombre);
-        if (!habitantes.isEmpty()) {
-            return new ResponseEntity<>(habitantes, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(habitantes, HttpStatus.NOT_FOUND);
-    }
+//    @GetMapping("/query")
+//    public ResponseEntity<ArrayList<Habitante>> consultarPorNombreHabitante(@RequestParam("nombre") String nombre) {
+//        ArrayList<Habitante> habitantes = this.habitanteServicio.consultarPorNombre(nombre);
+//        if (!habitantes.isEmpty()) {
+//            return new ResponseEntity<>(habitantes, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(habitantes, HttpStatus.NOT_FOUND);
+//    }
 }

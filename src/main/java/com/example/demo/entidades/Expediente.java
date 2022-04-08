@@ -1,20 +1,40 @@
 package com.example.demo.entidades;
 
 import java.io.File;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "expedientes")
 
 public class Expediente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private int idExpediente;
 
+    @Column()
     private byte[] imagenes;
+
+    @Column(nullable = false)
     private String informacionGeneral;
-    private File documento;
+
+    @Column()
+    private byte[] documento;
 
     public Expediente() {
     }
 
-    public Expediente(byte[] imagenes, String informacionGeneral, File documento) {
-        this.imagenes = imagenes;
-        this.informacionGeneral = informacionGeneral;
-        this.documento = documento;
+    public int getIdExpediente() {
+        return idExpediente;
+    }
+
+    public void setIdExpediente(int idExpediente) {
+        this.idExpediente = idExpediente;
     }
 
     public byte[] getImagenes() {
@@ -33,13 +53,13 @@ public class Expediente {
         this.informacionGeneral = informacionGeneral;
     }
 
-    public File getDocumento() {
+    public byte[] getDocumento() {
         return documento;
     }
 
-    public void setDocumento(File documento) {
+    public void setDocumento(byte[] documento) {
         this.documento = documento;
     }
 
-    
+
 }
