@@ -1,17 +1,21 @@
 package com.example.demo.entidades;
 
 import java.io.File;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "expedientes")
+@Table(name = "expedientes")
 
 public class Expediente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
@@ -25,6 +29,9 @@ public class Expediente {
 
     @Column()
     private byte[] documento;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idExpediente")
+    private List<Habitante> habitanteList;
 
     public Expediente() {
     }
@@ -61,5 +68,9 @@ public class Expediente {
         this.documento = documento;
     }
 
+    @Override
+    public String toString() {
+        return "Expediente{" + "idExpediente=" + idExpediente + ", imagenes=" + imagenes + ", informacionGeneral=" + informacionGeneral + ", documento=" + documento + ", habitanteList=" + habitanteList + '}';
+    }
 
 }

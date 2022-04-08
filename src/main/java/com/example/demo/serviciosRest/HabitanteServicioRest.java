@@ -39,7 +39,7 @@ public class HabitanteServicioRest {
     }
 
     //Consultar por un parámetro en especifico un habitante
-//    public ArrayList<Habitante> consultarPorNombre(String nombre){
-//        return (ArrayList<Habitante>) this.habitanteRepository.findByNombre(nombre);
-//    }
+    public ArrayList<Habitante> consultarPorNombre(String nombre){
+        return (ArrayList<Habitante>) this.habitanteRepository.findByNombre(nombre);
+    }
 }
