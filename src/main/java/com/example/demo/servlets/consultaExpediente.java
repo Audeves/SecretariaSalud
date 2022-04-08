@@ -1,7 +1,7 @@
 package com.example.demo.servlets;
 
-import com.example.demo.entidades.Usuario;
-import com.example.demo.serviciosRest.UsuarioServicio;
+import com.example.demo.entidades.Expediente;
+import com.example.demo.serviciosRest.ExpedienteServicio;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,18 +11,17 @@ import javax.servlet.http.HttpSession;
 
 public class consultaExpediente extends HttpServlet {
 
-    UsuarioServicio usuarios;
+    ExpedienteServicio expediente;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        this.usuarios = new UsuarioServicio();   
-        Usuario hb = new Usuario();
-        hb.setNombre("Bryan");
-        hb.setCiudad("sonora");
+        this.expediente = new ExpedienteServicio();   
+        Expediente hb = new Expediente();
+        hb.setInformacionGeneral("Expediente Medico de Paciente XXXXXXXX");
         System.out.println(hb);
-        session.setAttribute("habitante", hb);
+        session.setAttribute("expedientes", hb);
         response.sendRedirect("consultaExpediente.jsp");
     }
 

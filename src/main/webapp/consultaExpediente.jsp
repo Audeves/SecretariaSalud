@@ -9,7 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    Usuario habitanteAux = (Usuario) session.getAttribute("habitante");
+    Expediente expedienteAux = (Expediente) session.getNombre("habitante");
     System.out.println("jsp: ");
     System.out.println(habitanteAux);
 
@@ -30,7 +30,7 @@
                 <div id="divDaosPersonales">
 
                     <%out.print("<label>Nombre: "
-                                + habitanteAux.getNombre()
+                                + expedienteAux.getInformacionGeneral()
                                 + "</label><br/><br/>");%>
 
 
@@ -43,7 +43,6 @@
                 <div>
                     <table id="tablaConsultas">
                         <tr>
-                            <td>13/02/2022</td>
                             <td>Dr. Isaac Segoviano</td>
                             <td>Hospital Buenavista</td>
                         </tr>

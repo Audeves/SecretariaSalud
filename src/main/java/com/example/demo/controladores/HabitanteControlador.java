@@ -23,7 +23,7 @@ public class HabitanteControlador {
     @Autowired
     HabitanteServicioRest habitanteServicio;
 
-    // Insertar un habitante (se mandan todos los datos menos el id) y Actualizar un usuario (se mandan todos los datos junto con el id para actualizar al usuario con el id que se mando)
+    // Insertar un habitante (se mandan todos los datos menos el id) y Actualizar un expediente (se mandan todos los datos junto con el id para actualizar al expediente con el id que se mando)
     @PostMapping()
     public ResponseEntity<Habitante> insertarHabitante(@RequestBody Habitante habitante) {
         return new ResponseEntity<>(this.habitanteServicio.insertar(habitante), HttpStatus.CREATED);
