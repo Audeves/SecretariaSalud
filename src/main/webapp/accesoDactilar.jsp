@@ -1,8 +1,4 @@
-<%-- 
-    Document   : accesoDactilar
-    Created on : 3/04/2022, 09:16:18 PM
-    Author     : l3tal
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,6 +1,5 @@
 package com.example.demo.controladores;
 import com.example.demo.serviciosRest.HabitanteServicioRest;
-import com.example.demo.serviciosRest.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
