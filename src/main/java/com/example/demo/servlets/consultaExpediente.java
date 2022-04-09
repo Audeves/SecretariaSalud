@@ -1,28 +1,51 @@
 package com.example.demo.servlets;
 
-import com.example.demo.entidades.Usuario;
-import com.example.demo.serviciosRest.UsuarioServicio;
+import com.example.demo.entidades.Expediente;
+import com.example.demo.entidades.Habitante;
+import com.example.demo.serviciosRest.ExpedienteServicio;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class consultaExpediente extends HttpServlet {
 
-    UsuarioServicio usuarios;
+    ExpedienteServicio expediente;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String listaExpedientesTexto = null;
+        String uri = "http://localhost:8080/habitantes";
+        try {
+            URL url = new URL(uri);
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("GET");
+            conexion.setRequestProperty("Accept", "application/json");
+
+            InputStreamReader isr = new InputStreamReader(conexion.getInputStream());
+            BufferedReader br = new BufferedReader(isr);
+            listaExpedientesTexto = br.readLine();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        JSONArray array = new JSONArray(listaExpedientesTexto);
+        List<JSONObject> listaExpedientes = new ArrayList();
+        for (int i = 0; i < array.length(); listaExpedientes.add(array.getJSONObject(i++)));
 
         HttpSession session = request.getSession();
-        this.usuarios = new UsuarioServicio();   
-        Usuario hb = new Usuario();
-        hb.setNombre("Bryan");
-        hb.setCiudad("sonora");
-        System.out.println(hb);
-        session.setAttribute("habitante", hb);
+        session.setAttribute("listaExpedientes", listaExpedientes);
+        System.out.println(listaExpedientes);
         response.sendRedirect("consultaExpediente.jsp");
     }
 

@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : 3/04/2022, 09:12:24 PM
-    Author     : l3tal
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

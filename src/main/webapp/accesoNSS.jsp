@@ -1,8 +1,4 @@
-<%-- 
-    Document   : accesoNSS
-    Created on : 3/04/2022, 09:15:43 PM
-    Author     : l3tal
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,7 +12,7 @@
     </head>
 
     <body>
-        <img src="imagenes/secretaria_salud.jpg" alt="">
+        <img src="img/secretaria_salud.jpg" alt="">
         <h1>Sistema de acceso dactilar - Habitantes</h1>
         <h2>Ingrese el número de seguro social del <br>habitante, para consultar su expediente</h2>
         <img src="img/logo_imss.png" alt="logo_imss">
