@@ -56,12 +56,12 @@ public class ExpedienteControlador {
     }
 
     // Consultar por un parámetro en especifico un expediente (por su titulo)
-    @GetMapping("/query")
-    public ResponseEntity<ArrayList<Expediente>> consultarPorNombreExpediente(@RequestParam("informacionGeneral") String nombre) {
-        ArrayList<Expediente> expediente = this.expedienteServicio.consultarPorNombre(nombre);
-        if (!expediente.isEmpty()) {
-            return new ResponseEntity<>(expediente, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(expediente, HttpStatus.NOT_FOUND);
-    }
+//    @GetMapping("/query")
+//    public ResponseEntity<ArrayList<Expediente>> consultarPorNombreExpediente(@RequestParam("informacionGeneral") String nombre) {
+//        ArrayList<Expediente> expediente = this.expedienteServicio.consultarPorNombre(nombre);
+//        if (!expediente.isEmpty()) {
+//            return new ResponseEntity<>(expediente, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(expediente, HttpStatus.NOT_FOUND);
+//    }
 }

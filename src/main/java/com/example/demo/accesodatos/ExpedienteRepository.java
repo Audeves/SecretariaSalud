@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
  @Repository
 public interface ExpedienteRepository extends CrudRepository<Expediente, Integer> {
-    public abstract ArrayList<Expediente> findByNombre(String nombre);
+//    public abstract ArrayList<Expediente> findByNombre(String nombre);
 }

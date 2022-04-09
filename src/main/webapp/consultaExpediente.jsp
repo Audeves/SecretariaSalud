@@ -5,13 +5,13 @@
 --%>
 
 <%@page import="com.example.demo.entidades.Habitante"%>
-<%@page import="com.example.demo.entidades.Usuario"%>
+<%@page import="com.example.demo.entidades.Expediente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    Expediente expedienteAux = (Expediente) session.getNombre("habitante");
+    Habitante expedienteAux = (Habitante) session.getAttribute("id_expediente");
     System.out.println("jsp: ");
-    System.out.println(habitanteAux);
+    System.out.println(expedienteAux);
 
 %>
 <!DOCTYPE html>
@@ -30,12 +30,15 @@
                 <div id="divDaosPersonales">
 
                     <%out.print("<label>Nombre: "
-                                + expedienteAux.getInformacionGeneral()
+                                + expedienteAux.getNombre()
+                                + "</label><br/><br/>");%>
+                                
+                    <%out.print("<label>Expediente: "
+                                + expedienteAux.getIdExpediente().getInformacionGeneral()
                                 + "</label><br/><br/>");%>
 
-
-                    <%out.print("<label>Ciudad: "
-                                + habitanteAux.getCiudad()
+                    <%out.print("<label>Direccion: "
+                                + expedienteAux.getDireccion()
                                 + "</label><br/><br/>");%>
                                     
                 </div>

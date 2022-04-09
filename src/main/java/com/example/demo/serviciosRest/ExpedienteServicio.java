@@ -39,7 +39,7 @@ public class ExpedienteServicio {
     }
 
     //Consultar por un parámetro en especifico un habitante
-    public ArrayList<Expediente> consultarPorNombre(String nombre){
-        return (ArrayList<Expediente>) this.expedienteRepository.findByNombre(nombre);
-    }
+//    public ArrayList<Expediente> consultarPorNombre(String nombre){
+//        return (ArrayList<Expediente>) this.expedienteRepository.findByNombre(nombre);
+//    }
 }
