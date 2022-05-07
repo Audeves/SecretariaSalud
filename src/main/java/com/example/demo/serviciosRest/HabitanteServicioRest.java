@@ -29,8 +29,8 @@ public class HabitanteServicioRest {
     }
 
     //Consultar por id un habitante
-    public Optional<Habitante> consultarPorId(int id){
-        return this.habitanteRepository.findById(id);
+    public Habitante consultarPorId(int id){
+        return this.habitanteRepository.findByIdhabitante(id);
     }
 
     //Consultar todos los habitante

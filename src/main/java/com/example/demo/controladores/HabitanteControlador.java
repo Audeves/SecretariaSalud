@@ -39,12 +39,8 @@ public class HabitanteControlador {
 
     // Consultar por id un habitante
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Optional<Habitante>> consultarPorIdHabitante(@PathVariable("id") int id) {
-        Optional<Habitante> habitante = this.habitanteServicio.consultarPorId(id);
-        if (!habitante.isPresent()) {
-            return new ResponseEntity<>(habitante, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(habitante, HttpStatus.NOT_FOUND);
+    public Habitante consultarPorIdHabitante(@PathVariable("id") int id) {
+        return this.habitanteServicio.consultarPorId(id);
     }
     
     // Consultar todos los habitantes
